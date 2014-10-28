@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pintos/!svn/ver/4/trunk/src/examples/lib/user
+END
+.dummy
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/pintos/!svn/ver/4/trunk/src/examples/lib/user/.dummy
+END

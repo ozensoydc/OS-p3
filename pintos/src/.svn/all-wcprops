@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/pintos/!svn/ver/16/trunk/src
+END
+Makefile.build
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/pintos/!svn/ver/11/trunk/src/Makefile.build
+END
+Makefile.kernel
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/pintos/!svn/ver/4/trunk/src/Makefile.kernel
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/pintos/!svn/ver/13/trunk/src/Makefile
+END
+Make.config
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/pintos/!svn/ver/15/trunk/src/Make.config
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/pintos/!svn/ver/4/trunk/src/LICENSE
+END
+Makefile.userprog
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pintos/!svn/ver/4/trunk/src/Makefile.userprog
+END
+makedemodisk.sh
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/pintos/!svn/ver/14/trunk/src/makedemodisk.sh
+END

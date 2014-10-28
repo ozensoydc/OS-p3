@@ -1,0 +1,167 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/pintos/!svn/ver/5/trunk/doc
+END
+vm.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/pintos/!svn/ver/4/trunk/doc/vm.tmpl
+END
+debug.texi
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/pintos/!svn/ver/4/trunk/doc/debug.texi
+END
+threads.texi
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/pintos/!svn/ver/4/trunk/doc/threads.texi
+END
+pintos.css
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/pintos/!svn/ver/4/trunk/doc/pintos.css
+END
+localcvsinstructions.texi
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/pintos/!svn/ver/4/trunk/doc/localcvsinstructions.texi
+END
+intro.texi
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/pintos/!svn/ver/5/trunk/doc/intro.texi
+END
+threads.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/pintos/!svn/ver/4/trunk/doc/threads.tmpl
+END
+reference.texi
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/pintos/!svn/ver/4/trunk/doc/reference.texi
+END
+devel.texi
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/pintos/!svn/ver/5/trunk/doc/devel.texi
+END
+pintos-t2h.init
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/pintos/!svn/ver/4/trunk/doc/pintos-t2h.init
+END
+installation.texi
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pintos/!svn/ver/4/trunk/doc/installation.texi
+END
+texinfo.tex
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/pintos/!svn/ver/4/trunk/doc/texinfo.tex
+END
+doc.texi
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/pintos/!svn/ver/4/trunk/doc/doc.texi
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/pintos/!svn/ver/4/trunk/doc/Makefile
+END
+userprog.texi
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/pintos/!svn/ver/4/trunk/doc/userprog.texi
+END
+texi2html
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/pintos/!svn/ver/4/trunk/doc/texi2html
+END
+userprog.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/pintos/!svn/ver/4/trunk/doc/userprog.tmpl
+END
+localsettings.texi
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/pintos/!svn/ver/5/trunk/doc/localsettings.texi
+END
+bibliography.texi
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pintos/!svn/ver/4/trunk/doc/bibliography.texi
+END
+pintos.texi
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/pintos/!svn/ver/4/trunk/doc/pintos.texi
+END
+filesys.texi
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/pintos/!svn/ver/4/trunk/doc/filesys.texi
+END
+44bsd.texi
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/pintos/!svn/ver/4/trunk/doc/44bsd.texi
+END
+filesys.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/pintos/!svn/ver/4/trunk/doc/filesys.tmpl
+END
+license.texi
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/pintos/!svn/ver/4/trunk/doc/license.texi
+END
+vm.texi
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/pintos/!svn/ver/4/trunk/doc/vm.texi
+END
+standards.texi
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/pintos/!svn/ver/4/trunk/doc/standards.texi
+END
+sample.tmpl
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/pintos/!svn/ver/4/trunk/doc/sample.tmpl
+END

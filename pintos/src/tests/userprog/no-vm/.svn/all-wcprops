@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/no-vm
+END
+Rubric
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/no-vm/Rubric
+END
+Make.tests
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/no-vm/Make.tests
+END
+multi-oom.ck
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/no-vm/multi-oom.ck
+END
+multi-oom.c
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/no-vm/multi-oom.c
+END

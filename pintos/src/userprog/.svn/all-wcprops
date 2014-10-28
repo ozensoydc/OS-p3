@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/pintos/!svn/ver/11/trunk/src/userprog
+END
+exception.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/pintos/!svn/ver/4/trunk/src/userprog/exception.h
+END
+gdt.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/pintos/!svn/ver/4/trunk/src/userprog/gdt.h
+END
+process.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/pintos/!svn/ver/4/trunk/src/userprog/process.h
+END
+Make.vars
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/pintos/!svn/ver/4/trunk/src/userprog/Make.vars
+END
+tss.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/pintos/!svn/ver/4/trunk/src/userprog/tss.c
+END
+syscall.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/pintos/!svn/ver/4/trunk/src/userprog/syscall.c
+END
+pagedir.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/pintos/!svn/ver/11/trunk/src/userprog/pagedir.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pintos/!svn/ver/4/trunk/src/userprog/Makefile
+END
+exception.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/pintos/!svn/ver/4/trunk/src/userprog/exception.c
+END
+gdt.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/pintos/!svn/ver/4/trunk/src/userprog/gdt.c
+END
+process.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/pintos/!svn/ver/4/trunk/src/userprog/process.c
+END
+tss.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/pintos/!svn/ver/4/trunk/src/userprog/tss.h
+END
+syscall.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/pintos/!svn/ver/4/trunk/src/userprog/syscall.h
+END
+pagedir.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/pintos/!svn/ver/4/trunk/src/userprog/pagedir.h
+END

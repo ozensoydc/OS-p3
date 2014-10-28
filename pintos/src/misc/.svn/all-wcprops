@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/pintos/!svn/ver/10/trunk/src/misc
+END
+bochs-2.2.6-page-fault-segv.patch
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/pintos/!svn/ver/4/trunk/src/misc/bochs-2.2.6-page-fault-segv.patch
+END
+bochs-2.2.6-solaris-link.patch
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/pintos/!svn/ver/4/trunk/src/misc/bochs-2.2.6-solaris-link.patch
+END
+bochs-2.2.6-gdbstub-ENN.patch
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/pintos/!svn/ver/4/trunk/src/misc/bochs-2.2.6-gdbstub-ENN.patch
+END
+bochs-2.2.6-triple-fault.patch
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/pintos/!svn/ver/4/trunk/src/misc/bochs-2.2.6-triple-fault.patch
+END
+gcc-3.3.6-cross-howto
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/pintos/!svn/ver/4/trunk/src/misc/gcc-3.3.6-cross-howto
+END
+bochs-2.2.6-build.sh
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/pintos/!svn/ver/9/trunk/src/misc/bochs-2.2.6-build.sh
+END
+bochs-2.2.6-paranoia.patch
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/pintos/!svn/ver/4/trunk/src/misc/bochs-2.2.6-paranoia.patch
+END
+bochs-2.2.6-solaris-tty.patch
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/pintos/!svn/ver/4/trunk/src/misc/bochs-2.2.6-solaris-tty.patch
+END
+build-pintos-tools
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/pintos/!svn/ver/10/trunk/src/misc/build-pintos-tools
+END
+bochs-2.2.6-g++.patch
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/pintos/!svn/ver/6/trunk/src/misc/bochs-2.2.6-g++.patch
+END
+bochs-2.2.6-ms-extensions.patch
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/pintos/!svn/ver/4/trunk/src/misc/bochs-2.2.6-ms-extensions.patch
+END
+bochs-2.2.6-big-endian.patch
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/pintos/!svn/ver/4/trunk/src/misc/bochs-2.2.6-big-endian.patch
+END
+bochs-2.2.6-jitter.patch
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/misc/bochs-2.2.6-jitter.patch
+END
+gdb-macros
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/pintos/!svn/ver/4/trunk/src/misc/gdb-macros
+END

@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/pintos/!svn/ver/11/trunk/src/filesys
+END
+free-map.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/pintos/!svn/ver/8/trunk/src/filesys/free-map.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/pintos/!svn/ver/4/trunk/src/filesys/Makefile
+END
+inode.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/pintos/!svn/ver/4/trunk/src/filesys/inode.c
+END
+free-map.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/pintos/!svn/ver/4/trunk/src/filesys/free-map.h
+END
+off_t.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/pintos/!svn/ver/4/trunk/src/filesys/off_t.h
+END
+inode.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/pintos/!svn/ver/4/trunk/src/filesys/inode.h
+END
+directory.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/pintos/!svn/ver/4/trunk/src/filesys/directory.c
+END
+fsutil.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pintos/!svn/ver/11/trunk/src/filesys/fsutil.c
+END
+Make.vars
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pintos/!svn/ver/4/trunk/src/filesys/Make.vars
+END
+directory.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/pintos/!svn/ver/4/trunk/src/filesys/directory.h
+END
+fsutil.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/pintos/!svn/ver/4/trunk/src/filesys/fsutil.h
+END
+filesys.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pintos/!svn/ver/4/trunk/src/filesys/filesys.c
+END
+file.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/pintos/!svn/ver/4/trunk/src/filesys/file.c
+END
+filesys.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pintos/!svn/ver/4/trunk/src/filesys/filesys.h
+END
+file.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/pintos/!svn/ver/4/trunk/src/filesys/file.h
+END

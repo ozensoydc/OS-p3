@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/pintos/!svn/ver/14/trunk/src/lib/kernel
+END
+list.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pintos/!svn/ver/4/trunk/src/lib/kernel/list.h
+END
+bitmap.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/pintos/!svn/ver/4/trunk/src/lib/kernel/bitmap.h
+END
+console.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/pintos/!svn/ver/14/trunk/src/lib/kernel/console.c
+END
+hash.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pintos/!svn/ver/4/trunk/src/lib/kernel/hash.c
+END
+debug.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/pintos/!svn/ver/4/trunk/src/lib/kernel/debug.c
+END
+console.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/pintos/!svn/ver/4/trunk/src/lib/kernel/console.h
+END
+stdio.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/pintos/!svn/ver/4/trunk/src/lib/kernel/stdio.h
+END
+hash.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pintos/!svn/ver/4/trunk/src/lib/kernel/hash.h
+END
+list.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/pintos/!svn/ver/4/trunk/src/lib/kernel/list.c
+END
+bitmap.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/pintos/!svn/ver/4/trunk/src/lib/kernel/bitmap.c
+END

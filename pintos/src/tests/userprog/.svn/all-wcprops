@@ -1,0 +1,809 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog
+END
+halt.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/halt.c
+END
+exec-missing.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/exec-missing.c
+END
+args.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/args.c
+END
+close-stdin.ck
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/close-stdin.ck
+END
+bad-jump.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/bad-jump.c
+END
+args-multiple.ck
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/args-multiple.ck
+END
+create-long.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/create-long.c
+END
+read-bad-fd.ck
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/read-bad-fd.ck
+END
+wait-bad-pid.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/wait-bad-pid.c
+END
+halt.ck
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/halt.ck
+END
+rox-multichild.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/rox-multichild.c
+END
+close-normal.ck
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/close-normal.ck
+END
+exec-once.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/exec-once.c
+END
+open-missing.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/open-missing.c
+END
+child-simple.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/child-simple.c
+END
+create-long.ck
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/create-long.ck
+END
+exec-multiple.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/exec-multiple.c
+END
+close-twice.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/close-twice.c
+END
+write-bad-ptr.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/write-bad-ptr.c
+END
+bad-jump2.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/bad-jump2.c
+END
+open-missing.ck
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/open-missing.ck
+END
+null.ck
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/null.ck
+END
+sc-boundary.ck
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/sc-boundary.ck
+END
+multi-child-fd.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/multi-child-fd.c
+END
+sc-bad-sp.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/sc-bad-sp.c
+END
+exec-bad-ptr.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/exec-bad-ptr.c
+END
+wait-twice.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/wait-twice.c
+END
+write-normal.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/write-normal.c
+END
+write-zero.ck
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/write-zero.ck
+END
+read-bad-fd.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/read-bad-fd.c
+END
+create-null.ck
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/create-null.ck
+END
+open-bad-ptr.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/open-bad-ptr.c
+END
+bad-write.ck
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/bad-write.ck
+END
+write-normal.ck
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/write-normal.ck
+END
+exec-arg.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/exec-arg.c
+END
+wait-simple.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/wait-simple.c
+END
+write-bad-ptr.ck
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/write-bad-ptr.ck
+END
+bad-jump2.ck
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/bad-jump2.ck
+END
+Make.tests
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/Make.tests
+END
+close-stdout.ck
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/close-stdout.ck
+END
+sc-boundary-2.ck
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/sc-boundary-2.ck
+END
+open-bad-ptr.ck
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/open-bad-ptr.ck
+END
+write-zero.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/write-zero.c
+END
+child-bad.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/child-bad.c
+END
+open-null.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/open-null.c
+END
+rox-simple.ck
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/rox-simple.ck
+END
+bad-read.ck
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/bad-read.ck
+END
+write-boundary.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/write-boundary.c
+END
+wait-bad-pid.ck
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/wait-bad-pid.ck
+END
+rox-child.inc
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/rox-child.inc
+END
+close-bad-fd.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/close-bad-fd.c
+END
+open-boundary.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/open-boundary.c
+END
+boundary.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/boundary.c
+END
+sc-bad-sp.ck
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/sc-bad-sp.ck
+END
+sc-boundary.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/sc-boundary.c
+END
+boundary.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/boundary.h
+END
+read-zero.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/read-zero.c
+END
+close-bad-fd.ck
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/close-bad-fd.ck
+END
+bad-read.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/bad-read.c
+END
+rox-simple.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/rox-simple.c
+END
+bad-write2.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/bad-write2.c
+END
+multi-recurse.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/multi-recurse.c
+END
+open-normal.ck
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/open-normal.ck
+END
+read-zero.ck
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/read-zero.ck
+END
+exec-missing.ck
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/exec-missing.ck
+END
+read-boundary.ck
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/read-boundary.ck
+END
+sample.inc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/sample.inc
+END
+write-stdin.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/write-stdin.c
+END
+open-twice.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/open-twice.c
+END
+bad-write2.ck
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/bad-write2.ck
+END
+multi-recurse.ck
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/multi-recurse.ck
+END
+multi-child-fd.ck
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/multi-child-fd.ck
+END
+bad-write.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/bad-write.c
+END
+bad-read2.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/bad-read2.c
+END
+wait-killed.ck
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/wait-killed.ck
+END
+close-stdin.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/close-stdin.c
+END
+open-null.ck
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/open-null.ck
+END
+child-close.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/child-close.c
+END
+args-single.ck
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/args-single.ck
+END
+open-normal.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/open-normal.c
+END
+create-normal.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/create-normal.c
+END
+create-bad-ptr.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/create-bad-ptr.c
+END
+read-stdout.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/read-stdout.c
+END
+read-normal.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/read-normal.c
+END
+read-bad-ptr.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/read-bad-ptr.c
+END
+args-none.ck
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/args-none.ck
+END
+open-empty.ck
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/open-empty.ck
+END
+create-bound.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/create-bound.c
+END
+exit.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/exit.c
+END
+args-many.ck
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/args-many.ck
+END
+create-empty.ck
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/create-empty.ck
+END
+sample.txt
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/sample.txt
+END
+rox-multichild.ck
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/rox-multichild.ck
+END
+write-bad-fd.ck
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/write-bad-fd.ck
+END
+create-bound.ck
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/create-bound.ck
+END
+write-stdin.ck
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/write-stdin.ck
+END
+close-stdout.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/close-stdout.c
+END
+sc-boundary-2.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/sc-boundary-2.c
+END
+exec-bad-ptr.ck
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/exec-bad-ptr.ck
+END
+Grading
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/Grading
+END
+close-normal.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/close-normal.c
+END
+bad-read2.ck
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/bad-read2.ck
+END
+open-boundary.ck
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/open-boundary.ck
+END
+create-empty.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/create-empty.c
+END
+sc-bad-arg.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/sc-bad-arg.c
+END
+create-normal.ck
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/create-normal.ck
+END
+exec-arg.ck
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/exec-arg.ck
+END
+wait-simple.ck
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/wait-simple.ck
+END
+wait-killed.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/wait-killed.c
+END
+sc-bad-arg.ck
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/sc-bad-arg.ck
+END
+read-normal.ck
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/read-normal.ck
+END
+create-exists.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/create-exists.c
+END
+exit.ck
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/exit.ck
+END
+open-twice.ck
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/open-twice.ck
+END
+write-boundary.ck
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/write-boundary.ck
+END
+exec-multiple.ck
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/exec-multiple.ck
+END
+rox-child.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/rox-child.c
+END
+child-rox.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/child-rox.c
+END
+create-exists.ck
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/create-exists.ck
+END
+args-dbl-space.ck
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/args-dbl-space.ck
+END
+create-bad-ptr.ck
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/create-bad-ptr.ck
+END
+Rubric.robustness
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/Rubric.robustness
+END
+create-null.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/create-null.c
+END
+read-bad-ptr.ck
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/read-bad-ptr.ck
+END
+exec-once.ck
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/exec-once.ck
+END
+wait-twice.ck
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/wait-twice.ck
+END
+close-twice.ck
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/close-twice.ck
+END
+Rubric.functionality
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/Rubric.functionality
+END
+read-boundary.c
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/read-boundary.c
+END
+open-empty.c
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/open-empty.c
+END
+rox-child.ck
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/rox-child.ck
+END
+write-bad-fd.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/write-bad-fd.c
+END
+read-stdout.ck
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/read-stdout.ck
+END
+bad-jump.ck
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/pintos/!svn/ver/4/trunk/src/tests/userprog/bad-jump.ck
+END
