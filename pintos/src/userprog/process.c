@@ -19,6 +19,7 @@
 #include "threads/vaddr.h"
 #include "lib/string.h"
 #include "threads/malloc.h"
+#include "threads/synch.h"
 
 static thread_func start_process NO_RETURN;
 static bool load (const char *cmdline, void (**eip) (void), void **esp);
@@ -32,6 +33,7 @@ process_execute (const char *file_name)
 {
   char *fn_copy;
   tid_t tid;
+  //struct thread *cur_t = thread_current();
 
   /* Make a copy of FILE_NAME.
      Otherwise there's a race between the caller and load(). */
@@ -44,6 +46,13 @@ process_execute (const char *file_name)
   tid = thread_create (file_name, PRI_DEFAULT, start_process, fn_copy);
   if (tid == TID_ERROR)
     palloc_free_page (fn_copy); 
+
+  struct child_status *child_status = get_child_status(tid);
+  if (child_status != NULL && child_status->child_tid == tid &&
+          child_status->return_status == -1) {
+      return TID_ERROR;
+  }
+
   return tid;
 }
 
@@ -64,23 +73,27 @@ start_process (void *file_name_)
   if_.cs = SEL_UCSEG;
   if_.eflags = FLAG_IF | FLAG_MBS;
 
-  //printf("file name is %s\n", file_name);
   file_name_to_load = strtok_r(file_name, " ", &save_ptr);
+  
+  // The threads name gets set somewhere to the untokenized arguement
+  // This is somewhat hackish way of solving the problem
+  strlcpy(thread_current()->name, file_name_to_load, strlen(file_name_to_load) + 1);
+
   success = load (file_name_to_load, &if_.eip, &if_.esp);
 
-  //Do it here
+  /* If load failed, quit. */
+  if (!success) {
+    thread_exit ();
+  }
 
-  //printf("stack point is %x when it should be %x\n", if_.esp, PHYS_BASE);
   char **args = (char **) malloc((strlen(file_name) + 1) * sizeof(char));
 
   int argc = 0;
   args[argc++] = file_name_to_load;
   while ((token = strtok_r(NULL, " ", &save_ptr)) != NULL) {
-      //printf("getting the token %s\n", token);
       args[argc++] = token;
   }
 
-  //printf("argc is %d\n", argc);
   int **addresses = (int **) malloc(argc * sizeof(int));
 
   // Place the arguments on stack
@@ -89,59 +102,43 @@ start_process (void *file_name_)
      int arg_len = strlen(args[i]); 
      if_.esp -= arg_len + 1;
      addresses[i] = if_.esp;
-     //printf("placing token on stack %s\n", args[i]);
-     //printf("stack pointer is now %x and arg_len was %d\n", if_.esp, arg_len);
      strlcpy(if_.esp, args[i], arg_len + 1);
      i--;
   }
-  //printf("right after placing it is %s\n", (char *)if_.esp);
 
   // Place the null sentinal
   if_.esp -= 4;
   *(char *) if_.esp = NULL;
 
-  //printf("stack pointer is now %x\n", if_.esp);
 
   // Place argument addresses on the stack
   i = argc - 1;
   while (i >= 0) {
       if_.esp -= 4;
       *(void **) if_.esp = addresses[i];
-      //printf("placing address %x\nstack pointer is now %x\n", addresses[i], if_.esp);
       i--;
   }
-  //printf("after address placement, it is %s\n", *(char **) if_.esp);
 
   // Place argv, argc, return address
   if_.esp -= 4;
   *(char ***) if_.esp = if_.esp + 4;
-  char **argg = * (char ***) if_.esp;
-  //printf("it is fasfasdf now %s\n\n", argg[0]);
 
   
 
   if_.esp -= 4;
-  //printf("argc right now is %d\n", argc);
   *(int *) if_.esp = argc;
 
   if_.esp -= 4;
   *(int *) if_.esp = 0;
 
 
-  char **s= *(char ***) (if_.esp + 8);
-  //printf("the function name %s\n\n", s[0]);
 
-  //printf("finished stack, final pointer is %x\n", if_.esp);
-  //hex_dump(0, if_.esp, 30, true);
   free(args);
   free(addresses);
-  //hex_dump(0, if_.esp, 30, true);
 
 
-  /* If load failed, quit. */
+
   palloc_free_page (file_name);
-  if (!success) 
-    thread_exit ();
 
   /* Start the user process by simulating a return from an
      interrupt, implemented by intr_exit (in
@@ -163,10 +160,55 @@ start_process (void *file_name_)
    This function will be implemented in problem 2-2.  For now, it
    does nothing. */
 int
-process_wait (tid_t child_tid UNUSED) 
+process_wait (tid_t child_tid) 
 {
-    while (1)
-        ;
+    struct thread *cur_t = thread_current();
+    struct list_elem *e;
+    struct thread *child;
+
+    //printf("waiting %s\n", thread_current()->name);
+    for (e = list_begin(&cur_t->children);
+         e != list_end(&cur_t->children);
+         e = list_next(e)) {
+        child = list_entry(e, struct thread, child_elem);
+        if (child->tid == child_tid)
+            break;
+    }
+
+    if (child->parent_t->tid == cur_t->tid &&
+        child->status == THREAD_DYING && child->child_waiting != NULL && 
+        child != NULL) {
+        return -1;
+    }
+
+    if (child->tid != child_tid && child != NULL)
+        return -1;
+
+    struct child_status *child_status = get_child_status(child_tid);
+
+    if (child_status != NULL) {
+        child_status->return_status = -1;
+        list_remove(&child_status->status_elem);
+        return child_status->return_status;
+    }
+
+    struct semaphore *child_waiting = (struct semaphore *)
+        malloc(sizeof(struct semaphore));
+    sema_init(child_waiting, 0);
+    child->child_waiting = child_waiting;
+
+    if (child->status != THREAD_DYING) {
+        sema_down(child_waiting);
+        child_status = get_child_status(child_tid);
+        child_status->return_status = -1;
+        list_remove(&child_status->status_elem);
+        sema_down(child_waiting);
+    }
+
+    free(child_waiting);
+    //printf("done waiting\n\n\n");
+
+    return child_status->return_status;
 }
 
 /* Free the current process's resources. */
@@ -192,6 +234,10 @@ process_exit (void)
       pagedir_activate (NULL);
       pagedir_destroy (pd);
     }
+
+  if (cur->child_waiting != NULL) {
+      sema_up(cur->child_waiting);
+  }
 }
 
 /* Sets up the CPU for running user code in the current
@@ -307,7 +353,6 @@ load (const char *file_name, void (**eip) (void), void **esp)
       printf ("load: %s: open failed\n", file_name);
       goto done; 
     }
-  //printf("File actaully opened\n");
 
   /* Read and verify executable header. */
   if (file_read (file, &ehdr, sizeof ehdr) != sizeof ehdr

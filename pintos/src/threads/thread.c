@@ -298,14 +298,35 @@ thread_exit (void)
   struct thread *t = thread_current();
 
 #ifdef USERPROG
+  //printf("1");
   if (t->parent_t != NULL) {
+      //printf("2");
       make_child_status();
+      //printf("3");
       list_remove(&t->child_elem);
+      //printf("4");
   }
+  //printf("5");
   if (t->child_waiting != NULL) {
+      //printf("6");
       sema_up(t->child_waiting);
+      //printf("7");
   }
+  struct list_elem *e;
+  struct thread *child;
+  // When process dies, removes its status
+  // as parent to each of its children
+
+  for (e = list_begin(&t->children);
+       e != list_end(&t->children);
+       e = list_next(e)) {
+      child = list_entry(e, struct thread, child_elem);
+      list_remove(&child->child_elem);
+      child->parent_t = NULL;
+  }
+  //printf("8");
   process_exit ();
+  //printf("9");
 #endif
 
   /* Remove thread from all threads list, set our status to dying,

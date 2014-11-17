@@ -19,6 +19,7 @@ static char *copy_in_string(const char *us);
 void check_valid_buffer(void *buffer, unsigned size);
 void check_valid_pointer(const void *vaddr);
 void exit(int status);
+tid_t exec(const char *cmd_line);
 int write(int fd, const void *buffer, unsigned size);
 int wait(tid_t tid);
 void halt(void);
@@ -47,29 +48,32 @@ syscall_handler (struct intr_frame *f)
             }
         case SYS_EXIT:
             {
-                //printf("running exit\n");
                 get_args(f, args, 1);
                 f->eax = args[0];
                 exit(args[0]);
                 break;
             }
+        case SYS_EXEC:
+            {
+                f->eax = 10;
+                get_args(f, args, 1);
+                args[0] = user_to_kernel_pointer((const void *) args[0]);
+                f->eax = exec((const char *) args[0]);
+                break;
+            }
         case SYS_WRITE:
             {
-                //printf("running write\n");
                 get_args(f, args, 3);
-                //printf("buffer before in\n");
-                //printf("buffer should be %s and size of %d\n", (char *) args[1], args[2]);
-                //check_valid_buffer((void *) args[1], (unsigned) args[2]);
+                check_valid_buffer((void *) args[1], (unsigned) args[2]);
                 //args[1] = user_to_kernel_pointer((const void *) args[1]);
-                //const void *test = user_to_kernel_pointer((const void *) args[1]);
-                const void *test = (const void *) copy_in_string((const char *) args[1]);
+                const void *test = user_to_kernel_pointer((const void *) args[1]);
+                //const void *test = (const void *) copy_in_string((const char *) args[1]);
                 f->eax = write(args[0], test, (unsigned) args[2]);
                 //printf("end of write call\n");
                 break;
             }
         case SYS_WAIT:
             {
-                //printf("running wait\n");
                 get_args(f, args, 1);
                 f->eax = wait(args[0]);
                 break;
@@ -90,70 +94,36 @@ exit(int status)
     thread_exit();
 }
 
-int
-write(int fd, const void *buffer, unsigned size)
+tid_t
+exec(const char *cmd_line)
 {
-    //printf("inside write\n");
-    if (fd == STDOUT_FILENO) {
-        //printf("step 1\n");
-        lock_acquire(&filesys_lock);
-        //printf("step 2\nbuffer is %s\n", (const char*) buffer);
-        putbuf(buffer, size);
-        //printf("step 3\n");
-        lock_release(&filesys_lock);
-        //printf("step 4\n");
-        return size;
-    } else
-        return -1;
+    lock_acquire(&filesys_lock);
+    //printf("locked in exec\n");
+    tid_t pid = process_execute(cmd_line);
+    lock_release(&filesys_lock);
+    //printf("released in exec\n");
+    return pid;
 }
-    
+
 int
 wait(tid_t tid)
 {
     return process_wait(tid);
 }
 
-
-
-
-static inline bool
-get_user (uint8_t *dst, const uint8_t *usrc)
+int
+write(int fd, const void *buffer, unsigned size)
 {
-    int eax;
-    asm ("movl $1f, %%eax; movb %2, %%al; movb %%al, %0; 1:"
-         : "=m" (*dst), "=&a" (eax) : "m" (*usrc));
-    return eax != 0;
+    if (fd == STDOUT_FILENO) {
+        lock_acquire(&filesys_lock);
+        //printf("locked in write\n");
+        putbuf(buffer, size);
+        lock_release(&filesys_lock);
+        //printf("released in write\n");
+        return size;
+    } else
+        return -1;
 }
-
-static char *
-copy_in_string (const char *us)
-{
-    char *ks;
-
-    ks = palloc_get_page(0);
-    if (ks == NULL)
-        thread_exit();
-
-    int i = 0;
-    get_user((uint8_t *) ks, (const uint8_t *) us);
-    while (*(us) != '\0') {
-        //printf("the string is %s\n", us);
-        get_user((uint8_t *) ks + ++i, (const uint8_t *) ++us); 
-    }
-
-    return ks;
-}
-
-
-
-
-
-
-
-
-
-
-
 
 void
 get_args(struct intr_frame *f, int *arg, int n)
@@ -184,8 +154,8 @@ check_valid_buffer(void *buffer, unsigned size)
 void
 check_valid_pointer(const void *vaddr)
 {
-    if (!is_user_vaddr(vaddr) || vaddr < USER_VADDR_BOTTOM) {
-        thread_exit();
+    if (!is_user_vaddr(vaddr) || !pagedir_get_page(thread_current()->pagedir, vaddr) ) {
+        exit(-1);
     }
 }
 
