@@ -17,6 +17,8 @@
 #include "threads/palloc.h"
 #include "threads/thread.h"
 #include "threads/vaddr.h"
+#include "lib/string.h"
+#include "threads/malloc.h"
 
 static thread_func start_process NO_RETURN;
 static bool load (const char *cmdline, void (**eip) (void), void **esp);
@@ -53,13 +55,88 @@ start_process (void *file_name_)
   char *file_name = file_name_;
   struct intr_frame if_;
   bool success;
+  char *file_name_to_load;
+  char *token, *save_ptr;
 
   /* Initialize interrupt frame and load executable. */
   memset (&if_, 0, sizeof if_);
   if_.gs = if_.fs = if_.es = if_.ds = if_.ss = SEL_UDSEG;
   if_.cs = SEL_UCSEG;
   if_.eflags = FLAG_IF | FLAG_MBS;
-  success = load (file_name, &if_.eip, &if_.esp);
+
+  //printf("file name is %s\n", file_name);
+  file_name_to_load = strtok_r(file_name, " ", &save_ptr);
+  success = load (file_name_to_load, &if_.eip, &if_.esp);
+
+  //Do it here
+
+  //printf("stack point is %x when it should be %x\n", if_.esp, PHYS_BASE);
+  char **args = (char **) malloc((strlen(file_name) + 1) * sizeof(char));
+
+  int argc = 0;
+  args[argc++] = file_name_to_load;
+  while ((token = strtok_r(NULL, " ", &save_ptr)) != NULL) {
+      //printf("getting the token %s\n", token);
+      args[argc++] = token;
+  }
+
+  //printf("argc is %d\n", argc);
+  int **addresses = (int **) malloc(argc * sizeof(int));
+
+  // Place the arguments on stack
+  int i = argc - 1;
+  while (i >= 0) {
+     int arg_len = strlen(args[i]); 
+     if_.esp -= arg_len + 1;
+     addresses[i] = if_.esp;
+     //printf("placing token on stack %s\n", args[i]);
+     //printf("stack pointer is now %x and arg_len was %d\n", if_.esp, arg_len);
+     strlcpy(if_.esp, args[i], arg_len + 1);
+     i--;
+  }
+  //printf("right after placing it is %s\n", (char *)if_.esp);
+
+  // Place the null sentinal
+  if_.esp -= 4;
+  *(char *) if_.esp = NULL;
+
+  //printf("stack pointer is now %x\n", if_.esp);
+
+  // Place argument addresses on the stack
+  i = argc - 1;
+  while (i >= 0) {
+      if_.esp -= 4;
+      *(void **) if_.esp = addresses[i];
+      //printf("placing address %x\nstack pointer is now %x\n", addresses[i], if_.esp);
+      i--;
+  }
+  //printf("after address placement, it is %s\n", *(char **) if_.esp);
+
+  // Place argv, argc, return address
+  if_.esp -= 4;
+  *(char ***) if_.esp = if_.esp + 4;
+  char **argg = * (char ***) if_.esp;
+  //printf("it is fasfasdf now %s\n\n", argg[0]);
+
+  
+
+  if_.esp -= 4;
+  //printf("argc right now is %d\n", argc);
+  *(int *) if_.esp = argc;
+
+  if_.esp -= 4;
+  *(int *) if_.esp = 0;
+
+
+  char **s= *(char ***) (if_.esp + 8);
+  //printf("the function name %s\n\n", s[0]);
+
+  //printf("finished stack, final pointer is %x\n", if_.esp);
+  //hex_dump(0, if_.esp, 30, true);
+  free(args);
+  free(addresses);
+  //hex_dump(0, if_.esp, 30, true);
+
 
   /* If load failed, quit. */
   palloc_free_page (file_name);
@@ -88,7 +165,8 @@ start_process (void *file_name_)
 int
 process_wait (tid_t child_tid UNUSED) 
 {
-  return -1;
+    while (1)
+        ;
 }
 
 /* Free the current process's resources. */
@@ -220,6 +298,7 @@ load (const char *file_name, void (**eip) (void), void **esp)
   if (t->pagedir == NULL) 
     goto done;
   process_activate ();
+  //printf("Page directory created\n");
 
   /* Open executable file. */
   file = filesys_open (file_name);
@@ -228,6 +307,7 @@ load (const char *file_name, void (**eip) (void), void **esp)
       printf ("load: %s: open failed\n", file_name);
       goto done; 
     }
+  //printf("File actaully opened\n");
 
   /* Read and verify executable header. */
   if (file_read (file, &ehdr, sizeof ehdr) != sizeof ehdr
@@ -433,13 +513,19 @@ setup_stack (void **esp)
   bool success = false;
 
   kpage = palloc_get_page (PAL_USER | PAL_ZERO);
+  ///kpage = palloc_get_page (PAL_ZERO);
   if (kpage != NULL) 
     {
+        // first argument is the highest point in stack
+        // so 4GB -> PHYSBASE -> stack end -> 0
+        // we are mapping the virtual address to kernel address
       success = install_page (((uint8_t *) PHYS_BASE) - PGSIZE, kpage, true);
-      if (success)
+      if (success) {
         *esp = PHYS_BASE;
-      else
+      }
+      else {
         palloc_free_page (kpage);
+      }
     }
   return success;
 }
