@@ -96,6 +96,12 @@ struct thread
 #ifdef USERPROG
     /* Owned by userprog/process.c. */
     uint32_t *pagedir;                  /* Page directory. */
+    struct list children;
+    struct list_elem child_elem;
+    struct list child_stati;
+
+    struct semaphore *child_waiting;
+    struct thread *parent_t;
 #endif
 
     /* Owned by thread.c. */
@@ -119,7 +125,7 @@ tid_t thread_create (const char *name, int priority, thread_func *, void *);
 void thread_block (void);
 void thread_unblock (struct thread *);
 
-struct thread *thread_current (void);
+struct thread* thread_current (void);
 tid_t thread_tid (void);
 const char *thread_name (void);
 
@@ -138,4 +144,14 @@ void thread_set_nice (int);
 int thread_get_recent_cpu (void);
 int thread_get_load_avg (void);
 
+struct child_status {
+    tid_t child_tid;
+    int return_status;
+    enum thread_status status;
+    struct list_elem status_elem;
+};
+
+struct child_status* get_child_status(tid_t child_tid);
+struct child_status* make_child_status(void);
+struct thread* get_thread_by_tid(tid_t tid);
 #endif /* threads/thread.h */
