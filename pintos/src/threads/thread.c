@@ -317,6 +317,7 @@ thread_exit (void)
   // When process dies, removes its status
   // as parent to each of its children
 
+  /*
   for (e = list_begin(&t->children);
        e != list_end(&t->children);
        e = list_next(e)) {
@@ -324,6 +325,7 @@ thread_exit (void)
       list_remove(&child->child_elem);
       child->parent_t = NULL;
   }
+  */
   //printf("8");
   process_exit ();
   //printf("9");
@@ -507,6 +509,8 @@ init_thread (struct thread *t, const char *name, int priority)
 #ifdef USERPROG
   list_init(&t->children);
   list_init(&t->child_stati);
+  list_init(&t->files);
+  t->next_fd = 3;
 #endif
 
   t->magic = THREAD_MAGIC;
@@ -610,7 +614,8 @@ schedule (void)
 }
 
 // retrieves childstatus from current_thread matching tid
-struct child_status* get_child_status(tid_t child_tid) 
+struct child_status* 
+get_child_status(tid_t child_tid) 
 {
     struct child_status* child_stat = 
         (struct child_status *) malloc(sizeof(struct child_status));
@@ -629,7 +634,8 @@ struct child_status* get_child_status(tid_t child_tid)
 }
 
 // adds child status info to parents
-struct child_status *make_child_status(void)
+struct child_status* 
+make_child_status(void)
 {
     struct thread *child = thread_current();
     struct thread *parent = child->parent_t;
@@ -643,13 +649,15 @@ struct child_status *make_child_status(void)
 }
 
 // 
-struct thread* get_thread_by_tid(tid_t td)
+struct 
+thread* 
+get_thread_by_tid(tid_t td)
 {
     struct thread *ret_thread;
     struct list_elem *e;
     for (e = list_begin(&all_list);
          e != list_end(&all_list);
-         e = list_next(e)); {
+         e = list_next(e)) {
         ret_thread = list_entry(e, struct thread, allelem);
         if (ret_thread->tid == td) {
             return ret_thread;
@@ -659,7 +667,8 @@ struct thread* get_thread_by_tid(tid_t td)
     return NULL;
 }
 
-void add_children(struct thread *child)
+void 
+add_children(struct thread *child)
 {
     struct thread *parent = thread_current();
     list_push_back(&parent->children, &child->child_elem);
@@ -667,6 +676,44 @@ void add_children(struct thread *child)
     return;
 }
 
+int 
+thread_add_fd(struct file *file)
+{
+    struct thread *parent = thread_current();
+    struct file_handle *fh = malloc(sizeof(struct file_handle));
+
+    fh->fd = parent->next_fd++;
+    fh->file = file;
+    list_push_front(&parent->files, &fh->elem);
+
+    return fh->fd;
+}
+
+struct file_handle* 
+thread_get_fh(struct list *files, int fd)
+{
+    struct thread *parent = thread_current();
+    struct list_elem *e;
+    struct file_handle *fh;
+
+    for (e = list_begin(&parent->files);
+         e != list_end(&parent->files);
+         e = list_next(e)) {
+        fh = list_entry(e, struct file_handle, elem);
+        if (fh->fd == fd) {
+            return fh;
+        }
+    }
+
+    return NULL;
+}
+        
+
+void 
+thread_remove_file(struct file_handle *fh)
+{
+    list_remove(&fh->elem);
+}
 
 /* Returns a tid to use for a new thread. */
 static tid_t

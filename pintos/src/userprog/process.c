@@ -31,6 +31,7 @@ static bool load (const char *cmdline, void (**eip) (void), void **esp);
 tid_t
 process_execute (const char *file_name) 
 {
+    
   char *fn_copy;
   tid_t tid;
   //struct thread *cur_t = thread_current();
@@ -85,6 +86,11 @@ start_process (void *file_name_)
   if (!success) {
     thread_exit ();
   }
+
+  struct file *file = filesys_open(file_name_to_load);
+  thread_current()->process_file = file;
+  file_deny_write(file);
+  
 
   char **args = (char **) malloc((strlen(file_name) + 1) * sizeof(char));
 
@@ -217,6 +223,7 @@ process_exit (void)
 {
   struct thread *cur = thread_current ();
   uint32_t *pd;
+  file_close(cur->process_file);
 
   /* Destroy the current process's page directory and switch back
      to the kernel-only page directory. */

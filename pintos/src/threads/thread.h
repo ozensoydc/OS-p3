@@ -102,6 +102,11 @@ struct thread
 
     struct semaphore *child_waiting;
     struct thread *parent_t;
+
+    struct list files;
+    int next_fd;
+    struct file *process_file;
+
 #endif
 
     /* Owned by thread.c. */
@@ -151,7 +156,16 @@ struct child_status {
     struct list_elem status_elem;
 };
 
+struct file_handle {
+    int fd;
+    struct file *file;
+    struct list_elem elem;
+};
+
 struct child_status* get_child_status(tid_t child_tid);
 struct child_status* make_child_status(void);
 struct thread* get_thread_by_tid(tid_t tid);
+int thread_add_fd(struct file *file);
+struct file_handle* thread_get_fh(struct list *files, int fd);
+void thread_remove_file (struct file_handle *fh);
 #endif /* threads/thread.h */
