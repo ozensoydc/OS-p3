@@ -171,7 +171,7 @@ process_wait (tid_t child_tid)
     struct thread *cur_t = thread_current();
     struct list_elem *e;
     struct thread *child;
-
+    int ret;
     //printf("waiting %s\n", thread_current()->name);
     for (e = list_begin(&cur_t->children);
          e != list_end(&cur_t->children);
@@ -192,11 +192,12 @@ process_wait (tid_t child_tid)
 
     struct child_status *child_status = get_child_status(child_tid);
 
-    if (child_status != NULL) {
-        child_status->return_status = -1;
+    if (child_status != NULL) 
+      {
+	child_status->return_status;
         list_remove(&child_status->status_elem);
         return child_status->return_status;
-    }
+      }
 
     struct semaphore *child_waiting = (struct semaphore *)
         malloc(sizeof(struct semaphore));
@@ -206,7 +207,7 @@ process_wait (tid_t child_tid)
     if (child->status != THREAD_DYING) {
         sema_down(child_waiting);
         child_status = get_child_status(child_tid);
-        child_status->return_status = -1;
+        ret = child_status->return_status;
         list_remove(&child_status->status_elem);
         sema_down(child_waiting);
     }
@@ -214,7 +215,7 @@ process_wait (tid_t child_tid)
     free(child_waiting);
     //printf("done waiting\n\n\n");
 
-    return child_status->return_status;
+    return ret;
 }
 
 /* Free the current process's resources. */

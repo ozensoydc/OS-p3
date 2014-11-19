@@ -643,6 +643,7 @@ make_child_status(void)
         (struct child_status *) malloc(sizeof(struct child_status));
     child_stat->child_tid = child->tid;
     child_stat->status = child->status;
+    child_stat->return_status=child->ret_status;
     list_push_back(&parent->child_stati, &child_stat->status_elem);
     return child_stat;
 
