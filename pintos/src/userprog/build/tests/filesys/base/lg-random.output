@@ -1,0 +1,46 @@
+Copying tests/filesys/base/lg-random to scratch partition...
+qemu -hda /tmp/9mUdXkcuEK.dsk -m 4 -net none -nographic -monitor null
+PiLo hda2
+Loading..............
+Kernel command line: -q -f extract run lg-random
+Pintos booting with 4,096 kB RAM...
+383 pages available in kernel pool.
+383 pages available in user pool.
+PCI: 8192 pages for 0:2.0 failed - may not work
+PCI Device 0:0.0 (8086,1237): Intel - 82441FX (PCI Host) IRQ 0
+PCI Device 0:1.0 (8086,7000): Intel - 82371SB_ISA (PCI-ISA Bridge) IRQ 0
+PCI Device 0:1.1 (8086,7010): Intel - 82371SB_IDE (Unknown Type) IRQ 0
+PCI Device 0:1.3 (8086,7113): Intel - 82371AB/EB/MB_ACPI (Unknown Type) IRQ 9
+PCI Device 0:2.0 (1013,b8): Cirrus Logic - CL-GD5446 (VGA Controller) IRQ 0
+Calibrating timer...  157,081,600 loops/s.
+Initializing EHCI
+Initializing UHCI
+hda: 5,040 sectors (2 MB), model "QM00001", serial "QEMU HARDDISK"
+hda1: 224 sectors (112 kB), Pintos OS kernel (20)
+hda2: 4,096 sectors (2 MB), Pintos file system (21)
+hda3: 101 sectors (50 kB), Pintos scratch (22)
+filesys: using hda2
+scratch: using hda3
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from hda3 into file system...
+Putting 'lg-random' into the file system...
+Erasing ustar archive...
+Executing 'lg-random':
+(lg-random) begin
+(lg-random) create "bazzle"
+(lg-random) open "bazzle"
+(lg-random) write "bazzle" in random order
+(lg-random) read "bazzle" in random order
+(lg-random) close "bazzle"
+(lg-random) end
+lg-random: exit(0)
+Execution of 'lg-random' complete.
+Timer: 452 ticks
+Thread: 0 idle ticks, 224 kernel ticks, 228 user ticks
+hda2 (filesys): 236 reads, 510 writes
+hda3 (scratch): 100 reads, 2 writes
+Console: 1492 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

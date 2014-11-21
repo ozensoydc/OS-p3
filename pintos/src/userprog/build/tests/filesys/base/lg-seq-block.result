@@ -1,0 +1,31 @@
+FAIL
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (lg-seq-block) begin
+  (lg-seq-block) create "noodle"
+  (lg-seq-block) open "noodle"
+  (lg-seq-block) writing "noodle"
+  (lg-seq-block) close "noodle"
+  (lg-seq-block) open "noodle" for verification
+  (lg-seq-block) verified contents of "noodle"
+  (lg-seq-block) close "noodle"
+  (lg-seq-block) end
+Differences in `diff -u' format:
+  (lg-seq-block) begin
+  (lg-seq-block) create "noodle"
+  (lg-seq-block) open "noodle"
+  (lg-seq-block) writing "noodle"
+  (lg-seq-block) close "noodle"
+  (lg-seq-block) open "noodle" for verification
+- (lg-seq-block) verified contents of "noodle"
+- (lg-seq-block) close "noodle"
+- (lg-seq-block) end
++ lg-seq-block: dying due to interrupt 0x07 (#NM Device Not Available Exception).
++ Interrupt 0x07 (#NM Device Not Available Exception) at eip=0x8048514
++  cr2=00000000 error=00000000
++  eax=00000004 ebx=0804a924 ecx=0000002e edx=00000001
++  esi=00000004 edi=00000003 esp=bffffcd0 ebp=0001279e
++  cs=001b ds=0023 es=0023 ss=0023
+
+(Process exit codes are excluded for matching purposes.)

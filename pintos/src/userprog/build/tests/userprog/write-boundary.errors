@@ -1,0 +1,5 @@
+Prototype mismatch: sub main::SIGVTALRM () vs none at /usr/local/bin/pintos line 987.
+Constant subroutine SIGVTALRM redefined at /usr/local/bin/pintos line 979.
+Could not access KVM kernel module: Permission denied
+failed to initialize KVM: Permission denied
+Back to tcg accelerator.
